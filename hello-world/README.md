@@ -1,7 +1,22 @@
-### Create image
+Simple Docker image that prints "hello world" to the console. A custom name can be passed as argument.
+Provides a second entrypoint to say farewell.
+
+### Build image
 ```
 docker build -t hello:1.0 .
 docker image ls
+```
+
+### Run container
+```
+# prints "hello world"
+docker run hello:1.0
+
+# greet homer
+docker run hello:1.0 homer
+
+# say farewell to homer
+docker run --entrypoint farewell hello:1.0 homer
 ```
 
 ### Push image to Docker Hub
